@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbara Simao | QA e Software Quality Engineer</title>
+    <title>Barbara Simao | Analista de QA</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        cyber: {
-                            purple: '#a855f7',
-                            pink: '#ec4899',
-                            cyan: '#06b6d4',
-                            dark: '#090d16',
-                            card: '#111827'
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7', // Azul Executivo Limpo
+                            600: '#0369a1',
+                            750: '#03588c',
+                        },
+                        accent: {
+                            500: '#0d9488', // Verde Água / Teal Sóbrio
+                        },
+                        surface: {
+                            light: '#f8fafc', // Slate 50
+                            card: '#ffffff',  // Branco Puro
+                            border: '#e2e8f0' // Cinza Borda Suave
                         }
                     }
                 }
@@ -27,146 +34,125 @@
     <!-- FontAwesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .font-code { font-family: 'Fira Code', monospace; }
         
-        .glass-card {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(168, 85, 247, 0.2);
-            transition: all 0.3s ease;
+        .card-clean {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease-in-out;
         }
-        .glass-card:hover {
-            border-color: rgba(236, 72, 153, 0.5);
-            box-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
-            transform: translateY(-4px);
-        }
-        .text-gradient {
-            background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .glow-button {
-            background: linear-gradient(135deg, #a855f7, #ec4899);
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
-            transition: all 0.3s ease;
-        }
-        .glow-button:hover {
-            box-shadow: 0 0 35px rgba(236, 72, 153, 0.7);
-            transform: scale(1.02);
+        .card-clean:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="bg-cyber-dark text-slate-100 min-h-screen selection:bg-cyber-pink selection:text-white">
+<body class="bg-surface-light text-slate-700 min-h-screen selection:bg-brand-500 selection:text-white">
 
-    <!-- Fundo Iluminado Estático -->
-    <div class="fixed top-0 left-1/4 w-96 h-96 bg-cyber-purple/20 rounded-full blur-[140px] pointer-events-none"></div>
-    <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyber-pink/15 rounded-full blur-[160px] pointer-events-none"></div>
-    <div class="fixed top-1/2 right-10 w-80 h-80 bg-cyber-cyan/15 rounded-full blur-[130px] pointer-events-none"></div>
-
-    <!-- Navegação Estilo Floating Pill -->
+    <!-- Navegação Estilo Minimalista Clean -->
     <header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
-        <div class="glass-card px-6 py-3 rounded-full flex items-center justify-between border border-slate-800">
-            <a href="#" class="font-extrabold text-lg tracking-wider">
-                <span class="text-gradient">BARBARA SIMAO</span>
+        <div class="card-clean px-6 py-3 rounded-2xl flex items-center justify-between">
+            <a href="#" class="font-extrabold text-base tracking-tight text-slate-900 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span> BARBARA SIMAO
             </a>
-            <nav class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-widest text-slate-300">
-                <a href="#sobre" class="hover:text-cyber-pink transition">Sobre</a>
-                <a href="#principios" class="hover:text-cyber-pink transition">Princípios</a>
-                <a href="#competencias" class="hover:text-cyber-pink transition">Skills</a>
-                <a href="#experiencias" class="hover:text-cyber-pink transition">Carreira</a>
-                <a href="#certificacoes" class="hover:text-cyber-pink transition">Certificações</a>
+            <nav class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-600">
+                <a href="#sobre" class="hover:text-brand-600 transition">Sobre</a>
+                <a href="#principios" class="hover:text-brand-600 transition">Princípios</a>
+                <a href="#competencias" class="hover:text-brand-600 transition">Skills</a>
+                <a href="#experiencias" class="hover:text-brand-600 transition">Carreira</a>
+                <a href="#certificacoes" class="hover:text-brand-600 transition">Certificações</a>
             </nav>
             <div class="flex items-center gap-3">
-                <a href="curriculo.pdf" download class="hidden sm:flex glass-card px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-slate-200 hover:text-white items-center gap-2">
-                    <i class="fa-solid fa-file-arrow-down text-cyber-cyan"></i> Baixar CV
+                <a href="curriculo.pdf" download class="hidden sm:flex px-4 py-2 rounded-lg text-xs font-semibold text-slate-700 hover:text-slate-900 border border-slate-200 hover:bg-slate-50 transition items-center gap-2">
+                    <i class="fa-solid fa-file-arrow-down text-brand-500"></i> Baixar CV
                 </a>
-                <a href="mailto:baah.simao@gmail.com" class="glow-button text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
+                <a href="mailto:baah.simao@gmail.com" class="bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-xs font-semibold transition shadow-sm">
                     Contato
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section de Alto Impacto -->
-    <section class="pt-44 pb-20 px-6 text-center relative z-10">
+    <!-- Hero Section Clean -->
+    <section class="pt-40 pb-16 px-6 text-center relative z-10">
         <div class="max-w-4xl mx-auto">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-code font-semibold bg-cyber-purple/10 text-cyber-purple border border-cyber-purple/30 mb-8">
-                <i class="fa-solid fa-code"></i> QUALITY ASSURANCE E AUTOMATION ENGINEER
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-medium bg-brand-50 text-brand-750 border border-brand-100 mb-8">
+                <i class="fa-solid fa-square-check"></i> QUALITY ASSURANCE E SOFTWARE ENGINEER
             </div>
             
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
-                Elevar a qualidade do software ao <span class="text-gradient">nível máximo</span>.
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight text-slate-900">
+                Garantia da Qualidade com foco em <span class="text-brand-500">eficiência</span> e <span class="text-accent-500">prevenção</span>.
             </h1>
 
-            <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-10">
-                Especialista em garantir estabilidade, segurança e eficiência em aplicações Web, Mobile e APIs. Transformando cenários complexos em sistemas confiáveis.
+            <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto font-normal leading-relaxed mb-10">
+                Especialista em garantir estabilidade, segurança e alto padrão técnico em aplicações Web, Mobile e APIs. Alinhando rigor técnico aos objetivos de negócio.
             </p>
 
-            <div class="flex flex-wrap justify-center gap-5">
-                <a href="https://linkedin.com/in/barbara-simao-485945124" target="_blank" class="glow-button px-8 py-4 rounded-2xl text-sm font-bold flex items-center gap-3">
-                    <i class="fa-brands fa-linkedin text-lg"></i> Conectar no LinkedIn
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://linkedin.com/in/barbara-simao-485945124" target="_blank" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-xl text-sm font-semibold flex items-center gap-2 transition shadow-md shadow-brand-500/15">
+                    <i class="fa-brands fa-linkedin text-base"></i> LinkedIn Profissional
                 </a>
-                <a href="curriculo.pdf" download class="glass-card px-8 py-4 rounded-2xl text-sm font-bold text-slate-200 hover:text-white flex items-center gap-3">
-                    <i class="fa-solid fa-file-pdf text-cyber-pink"></i> Baixar Currículo PDF
+                <a href="curriculo.pdf" download class="card-clean px-6 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:text-slate-900 flex items-center gap-2">
+                    <i class="fa-solid fa-file-pdf text-slate-400"></i> Baixar Currículo PDF
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Sobre Mim -->
-    <section id="sobre" class="py-16 px-6 relative z-10">
+    <section id="sobre" class="py-12 px-6 relative z-10">
         <div class="max-w-4xl mx-auto">
-            <div class="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-cyber-pink/10 rounded-bl-full pointer-events-none"></div>
-                <h2 class="text-xs font-code font-bold uppercase tracking-widest text-cyber-cyan mb-2">// PERFIL PROFISSIONAL</h2>
-                <h3 class="text-3xl font-bold mb-6 text-white">Engenharia de Software aliada ao rigor em QA</h3>
-                <div class="space-y-4 text-slate-300 font-light text-base leading-relaxed">
+            <div class="card-clean p-8 md:p-10 rounded-2xl relative overflow-hidden">
+                <h2 class="text-xs font-code font-bold uppercase tracking-wider text-brand-500 mb-2">// PERFIL PROFISSIONAL</h2>
+                <h3 class="text-2xl font-bold mb-5 text-slate-900">Engenharia de Software aliada à cultura de Qualidade</h3>
+                <div class="space-y-4 text-slate-600 font-normal text-sm md:text-base leading-relaxed">
                     <p>
-                        Possuo formação acadêmica em <strong class="text-white font-semibold">Análise e Desenvolvimento de Sistemas</strong> e Pós-Graduação em <strong class="text-white font-semibold">Engenharia de Software com Métodos Ágeis</strong>. Minha atuação foca na garantia da qualidade de ponta a ponta, redução de falhas em produção e alinhamento estratégico com equipes de desenvolvimento.
+                        Possuo formação acadêmica em <strong class="text-slate-900 font-semibold">Análise e Desenvolvimento de Sistemas</strong> e Pós-Graduação em <strong class="text-slate-900 font-semibold">Engenharia de Software com Métodos Ágeis</strong>. Minha atuação foca na garantia da qualidade de ponta a ponta, mitigação de riscos em produção e estruturação de rotinas de testes contínuos.
                     </p>
                     <p>
-                        Ampla bagagem na condução de testes funcionais, regressão, smoke tests, testes de APIs REST e homologação de sistemas corporativos críticos (Web, Mobile e Desktop), além de validações em bancos de dados relacionais via SQL.
+                        Ampla experiência na condução de testes funcionais, regressão, smoke tests, validações de APIs REST e homologação de sistemas corporativos críticos (Web, Mobile e Desktop), além de análise de dados via SQL.
                     </p>
                 </div>
-                <div class="mt-8 pt-6 border-t border-slate-800/80 flex flex-wrap gap-6 text-xs font-code text-slate-400">
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-cyber-pink"></i> Praia Grande - SP</div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-globe text-cyber-cyan"></i> Inglês Técnico</div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-check-double text-cyber-purple"></i> Metodologias Ágeis / Scrum</div>
+                <div class="mt-8 pt-6 border-t border-slate-100 flex flex-wrap gap-6 text-xs text-slate-500 font-medium">
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-500"></i> Praia Grande - SP</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-globe text-accent-500"></i> Inglês Técnico</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-users text-brand-500"></i> Metodologias Ágeis / Scrum</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Princípios de QA -->
-    <section id="principios" class="py-16 px-6 relative z-10">
+    <section id="principios" class="py-12 px-6 relative z-10">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-xs font-code font-bold uppercase tracking-widest text-cyber-purple mb-2 text-center">// FILOSOFIA DE TRABALHO</h2>
-            <h3 class="text-3xl font-bold text-center mb-12 text-white">Meus Princípios em QA</h3>
+            <h2 class="text-xs font-code font-bold uppercase tracking-wider text-brand-500 mb-2 text-center">// DIRETRIZ TÉCNICA</h2>
+            <h3 class="text-2xl font-bold text-center mb-10 text-slate-900">Princípios de Atuação em QA</h3>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="text-cyber-pink text-2xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h4 class="font-bold text-white text-base mb-2">Prevenção > Detecção</h4>
-                    <p class="text-xs text-slate-400 font-light leading-relaxed">
-                        Atuação desde o refinamento de requisitos para mitigar inconsistências antes mesmo do desenvolvimento do código.
+            <div class="grid md:grid-cols-3 gap-5">
+                <div class="card-clean p-6 rounded-xl">
+                    <div class="text-brand-500 text-xl mb-3"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4 class="font-bold text-slate-900 text-base mb-2">Prevenção > Detecção</h4>
+                    <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                        Atuação desde o refinamento de requisitos para mitigar falhas conceituais antes do início do desenvolvimento.
                     </p>
                 </div>
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="text-cyber-cyan text-2xl mb-4"><i class="fa-solid fa-comments"></i></div>
-                    <h4 class="font-bold text-white text-base mb-2">Comunicação Clara</h4>
-                    <p class="text-xs text-slate-400 font-light leading-relaxed">
-                        Documentação técnica precisa, relatórios detalhados com passos para reprodução e alinhamento constante com a equipe.
+                <div class="card-clean p-6 rounded-xl">
+                    <div class="text-accent-500 text-xl mb-3"><i class="fa-solid fa-comments"></i></div>
+                    <h4 class="font-bold text-slate-900 text-base mb-2">Comunicação Clara</h4>
+                    <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                        Documentação objetiva, relatos de bugs estruturados com passos reprodutíveis e alinhamento transparente.
                     </p>
                 </div>
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="text-cyber-purple text-2xl mb-4"><i class="fa-solid fa-user-check"></i></div>
-                    <h4 class="font-bold text-white text-base mb-2">Foco no Usuário</h4>
-                    <p class="text-xs text-slate-400 font-light leading-relaxed">
-                        Garantia de que o produto entregue seja não apenas livre de defeitos, mas seguro, estável e intuitivo para o usuário final.
+                <div class="card-clean p-6 rounded-xl">
+                    <div class="text-brand-500 text-xl mb-3"><i class="fa-solid fa-user-check"></i></div>
+                    <h4 class="font-bold text-slate-900 text-base mb-2">Foco no Negócio</h4>
+                    <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                        Garantia de que o software atenda às necessidades reais dos usuários mantendo estabilidade e confiabilidade.
                     </p>
                 </div>
             </div>
@@ -174,174 +160,171 @@
     </section>
 
     <!-- Competências / Arsenal Técnico -->
-    <section id="competencias" class="py-16 px-6 relative z-10">
+    <section id="competencias" class="py-12 px-6 relative z-10">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-xs font-code font-bold uppercase tracking-widest text-cyber-pink mb-2 text-center">// SKILLS E TECNOLOGIAS</h2>
-            <h3 class="text-3xl font-bold text-center mb-12 text-white">Domínio Técnico e Ferramentas</h3>
+            <h2 class="text-xs font-code font-bold uppercase tracking-wider text-brand-500 mb-2 text-center">// TECNOLOGIAS E FERRAMENTAS</h2>
+            <h3 class="text-2xl font-bold text-center mb-10 text-slate-900">Competências Técnicas</h3>
 
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-3 gap-5">
                 <!-- Card 1 -->
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="w-12 h-12 rounded-xl bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center text-cyber-purple text-xl mb-4">
-                        <i class="fa-solid fa-bug-slash"></i>
+                <div class="card-clean p-6 rounded-xl">
+                    <div class="w-10 h-10 rounded-lg bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-500 text-lg mb-4">
+                        <i class="fa-solid fa-vial"></i>
                     </div>
-                    <h4 class="font-bold text-lg mb-3 text-white">Testes e Qualidade</h4>
-                    <p class="text-xs text-slate-400 font-light leading-relaxed mb-4">
-                        Planejamento, roteiros de testes, regressão, smoke test, testes exploratórios e homologação de sistemas.
+                    <h4 class="font-bold text-base mb-2 text-slate-900">Testes & Qualidade</h4>
+                    <p class="text-xs text-slate-600 font-normal leading-relaxed mb-4">
+                        Planejamento, roteiros de teste, validação funcional, regressão e homologação contínua.
                     </p>
-                    <div class="flex flex-wrap gap-1.5 text-[11px] font-code text-cyber-purple">
-                        <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Mobile</span>
-                        <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Web</span>
-                        <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">APIs</span>
+                    <div class="flex flex-wrap gap-1.5 text-[11px] font-code text-slate-600">
+                        <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">Web</span>
+                        <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">Mobile</span>
+                        <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">APIs</span>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="w-12 h-12 rounded-xl bg-cyber-pink/10 border border-cyber-pink/30 flex items-center justify-center text-cyber-pink text-xl mb-4">
-                        <i class="fa-solid fa-terminal"></i>
+                <div class="card-clean p-6 rounded-xl">
+                    <div class="w-10 h-10 rounded-lg bg-teal-50 border border-teal-100 flex items-center justify-center text-accent-500 text-lg mb-4">
+                        <i class="fa-solid fa-robot"></i>
                     </div>
-                    <h4 class="font-bold text-lg mb-3 text-white">Automação e Tools</h4>
-                    <p class="text-xs text-slate-400 font-light leading-relaxed mb-4">
-                        Desenvolvimento de scripts de automação, gestão de defeitos e validação de requisições.
+                    <h4 class="font-bold text-base mb-2 text-slate-900">Automação & Ferramentas</h4>
+                    <p class="text-xs text-slate-600 font-normal leading-relaxed mb-4">
+                        Criação de scripts automatizados, execução de coleções de API e gestão de defeitos.
                     </p>
-                    <div class="flex flex-wrap gap-1.5 text-[11px] font-code text-cyber-pink">
-                        <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Cypress</span>
-                        <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Playwright</span>
-                        <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Postman</span>
-                        <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Jira</span>
+                    <div class="flex flex-wrap gap-1.5 text-[11px] font-code text-slate-600">
+                        <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">Cypress</span>
+                        <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">Playwright</span>
+                        <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">Postman</span>
+                        <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">Jira</span>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="w-12 h-12 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center text-cyber-cyan text-xl mb-4">
+                <div class="card-clean p-6 rounded-xl">
+                    <div class="w-10 h-10 rounded-lg bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-500 text-lg mb-4">
                         <i class="fa-solid fa-database"></i>
                     </div>
-                    <h4 class="font-bold text-lg mb-3 text-white">Linguagens e Dados</h4>
-                    <p class="text-xs text-slate-400 font-light leading-relaxed mb-4">
-                        Consultas complexas em banco de dados e conhecimento em linguagens de programação.
+                    <h4 class="font-bold text-base mb-2 text-slate-900">Linguagens & Dados</h4>
+                    <p class="text-xs text-slate-600 font-normal leading-relaxed mb-4">
+                        Consultas estruturadas em bancos de dados relacionais e automação com linguagens modernas.
                     </p>
-                    <div class="flex flex-wrap gap-1.5 text-[11px] font-code text-cyber-cyan">
-                        <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">SQL</span>
-                        <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">JavaScript</span>
-                        <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Python</span>
-                        <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Linux</span>
+                    <div class="flex flex-wrap gap-1.5 text-[11px] font-code text-slate-600">
+                        <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">SQL</span>
+                        <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">JavaScript</span>
+                        <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">Python</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experiência Profissional com Impacto -->
-    <section id="experiencias" class="py-16 px-6 relative z-10">
+    <!-- Experiência Profissional -->
+    <section id="experiencias" class="py-12 px-6 relative z-10">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-xs font-code font-bold uppercase tracking-widest text-cyber-purple mb-2">// TRAJETÓRIA E IMPACTO</h2>
-            <h3 class="text-3xl font-bold mb-12 text-white">Experiência Profissional</h3>
+            <h2 class="text-xs font-code font-bold uppercase tracking-wider text-brand-500 mb-2">// CARREIRA</h2>
+            <h3 class="text-2xl font-bold mb-10 text-slate-900">Experiência Profissional</h3>
 
-            <div class="space-y-6">
-                <div class="glass-card p-8 rounded-2xl">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+            <div class="space-y-5">
+                <div class="card-clean p-7 rounded-xl">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
                         <div>
-                            <h4 class="text-xl font-bold text-white">Analista de QA</h4>
-                            <p class="text-cyber-pink font-semibold text-sm">Wsoma Soluções Web LTDA</p>
+                            <h4 class="text-lg font-bold text-slate-900">Analista de QA</h4>
+                            <p class="text-brand-500 font-semibold text-xs">Wsoma Soluções Web LTDA</p>
                         </div>
-                        <span class="text-xs font-code px-3 py-1 rounded-full bg-slate-900 text-cyber-cyan border border-slate-800 mt-2 md:mt-0 w-fit">2025 - 2026</span>
+                        <span class="text-xs font-code px-2.5 py-1 rounded bg-slate-100 text-slate-600 border border-slate-200 mt-2 md:mt-0 w-fit">2025 - 2026</span>
                     </div>
-                    <ul class="text-sm text-slate-300 font-light space-y-2 mb-4">
-                        <li>• Liderança e condução de testes funcionais, regressão e APIs em plataformas corporativas (Web, Mobile Android/iOS e Windows).</li>
-                        <li>• Validação de integridade de dados via consultas SQL avançadas e testes de integrações via Postman.</li>
-                        <li>• Mapeamento de cenários, produção de documentação técnica e acompanhamento de ambientes de homologação.</li>
+                    <ul class="text-xs md:text-sm text-slate-600 font-normal space-y-2 mb-4 leading-relaxed">
+                        <li>• Condução de testes funcionais, regressão e APIs em plataformas corporativas (Web, Mobile e Windows).</li>
+                        <li>• Validação de integridade de dados via consultas SQL avançadas e testes de rotas via Postman.</li>
+                        <li>• Mapeamento de cenários de teste, elaboração de documentação técnica e acompanhamento de homologação.</li>
                     </ul>
-                    <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 text-xs text-cyber-cyan font-code">
-                        <i class="fa-solid fa-chart-line text-cyber-pink mr-1"></i> <strong>Impacto:</strong> Otimização do tempo de execução de testes de regressão e redução de inconsistências em ambiente de homologação.
+                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs text-slate-600 font-normal">
+                        <strong class="text-brand-600 font-semibold">Impacto:</strong> Redução de inconsistências registradas em ambientes de homologação e ganho de eficiência em testes regressivos.
                     </div>
                 </div>
 
-                <div class="glass-card p-8 rounded-2xl">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <div class="card-clean p-7 rounded-xl">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
                         <div>
-                            <h4 class="text-xl font-bold text-white">Analista de Testes / QA</h4>
-                            <p class="text-cyber-pink font-semibold text-sm">Procfit Gestão Orientada a Processos</p>
+                            <h4 class="text-lg font-bold text-slate-900">Analista de Testes / QA</h4>
+                            <p class="text-brand-500 font-semibold text-xs">Procfit Gestão Orientada a Processos</p>
                         </div>
-                        <span class="text-xs font-code px-3 py-1 rounded-full bg-slate-900 text-cyber-cyan border border-slate-800 mt-2 md:mt-0 w-fit">2022 - 2025</span>
+                        <span class="text-xs font-code px-2.5 py-1 rounded bg-slate-100 text-slate-600 border border-slate-200 mt-2 md:mt-0 w-fit">2022 - 2025</span>
                     </div>
-                    <ul class="text-sm text-slate-300 font-light space-y-2 mb-4">
-                        <li>• Testes funcionais e de integração para sistemas críticos corporativos e de atendimento.</li>
-                        <li>• Registro detalhado e gestão de bugs no Jira, colaborando com desenvolvedores para análise de causa raiz.</li>
-                        <li>• Validação de requisitos de negócio em ambientes Windows e Linux.</li>
+                    <ul class="text-xs md:text-sm text-slate-600 font-normal space-y-2 mb-4 leading-relaxed">
+                        <li>• Execução de testes funcionais e de integração para sistemas críticos corporativos e de atendimento.</li>
+                        <li>• Registro detalhado e acompanhamento do ciclo de vida de bugs via Jira em direta colaboração com os desenvolvedores.</li>
                     </ul>
-                    <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 text-xs text-cyber-cyan font-code">
-                        <i class="fa-solid fa-chart-line text-cyber-pink mr-1"></i> <strong>Impacto:</strong> Aumento na detecção proativa de defeitos antes do lançamento oficial em produção.
+                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs text-slate-600 font-normal">
+                        <strong class="text-brand-600 font-semibold">Impacto:</strong> Aumento significativo da taxa de detecção proativa de inconsistências antes do deploy final.
                     </div>
                 </div>
 
-                <div class="glass-card p-8 rounded-2xl">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <div class="card-clean p-7 rounded-xl">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
                         <div>
-                            <h4 class="text-xl font-bold text-white">Analista de Testes / Suporte</h4>
-                            <p class="text-cyber-pink font-semibold text-sm">Wsoma Soluções Web LTDA</p>
+                            <h4 class="text-lg font-bold text-slate-900">Analista de Testes / Suporte</h4>
+                            <p class="text-brand-500 font-semibold text-xs">Wsoma Soluções Web LTDA</p>
                         </div>
-                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-900 text-cyber-cyan border border-slate-800 mt-2 md:mt-0 w-fit">2017 - 2022</span>
+                        <span class="text-xs font-code px-2.5 py-1 rounded bg-slate-100 text-slate-600 border border-slate-200 mt-2 md:mt-0 w-fit">2017 - 2022</span>
                     </div>
-                    <ul class="text-sm text-slate-300 font-light space-y-2">
-                        <li>• Atendimento de suporte técnico avançado, triagem de incidentes e reprodução controlada de falhas.</li>
-                        <li>• Homologação e validação crítica de patches/correções antes da liberação oficial em produção.</li>
+                    <ul class="text-xs md:text-sm text-slate-600 font-normal space-y-2 leading-relaxed">
+                        <li>• Suporte técnico avançado, triagem de incidentes, reprodução de cenários de falhas e homologação de correções.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certificações e Cursos -->
-    <section id="certificacoes" class="py-16 px-6 relative z-10">
+    <!-- Certificações -->
+    <section id="certificacoes" class="py-12 px-6 relative z-10">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-xs font-code font-bold uppercase tracking-widest text-cyber-pink mb-2">// DESENVOLVIMENTO CONTÍNUO</h2>
-            <h3 class="text-3xl font-bold mb-8 text-white">Certificações e Formações</h3>
+            <h2 class="text-xs font-code font-bold uppercase tracking-wider text-brand-500 mb-2">// DESENVOLVIMENTO PROFISSIONAL</h2>
+            <h3 class="text-2xl font-bold mb-8 text-slate-900">Certificações e Especializações</h3>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="glass-card p-6 rounded-2xl border-l-4 border-l-cyber-purple">
-                    <span class="text-[10px] font-code uppercase tracking-wider px-2 py-0.5 rounded bg-cyber-purple/20 text-cyber-purple">Em Preparação</span>
-                    <h4 class="font-bold text-white text-base mt-2 mb-1">ISTQB CTFL (Certified Tester Foundation Level)</h4>
-                    <p class="text-xs text-slate-400 font-light">Estudo focado na norma internacional de testes de software, conceitos de syllabus e engenharia de qualidade.</p>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="card-clean p-6 rounded-xl border-l-4 border-l-brand-500">
+                    <span class="text-[10px] font-code uppercase tracking-wider px-2 py-0.5 rounded bg-brand-50 text-brand-750">Em Preparação</span>
+                    <h4 class="font-bold text-slate-900 text-base mt-2 mb-1">ISTQB CTFL (Certified Tester Foundation Level)</h4>
+                    <p class="text-xs text-slate-600 font-normal">Estudo aprofundado dos padrões internacionais de engenharia de testes de software.</p>
                 </div>
-                <div class="glass-card p-6 rounded-2xl border-l-4 border-l-cyber-cyan">
-                    <span class="text-[10px] font-code uppercase tracking-wider px-2 py-0.5 rounded bg-cyber-cyan/20 text-cyber-cyan">Aprofundamento Técnico</span>
-                    <h4 class="font-bold text-white text-base mt-2 mb-1">Treinamento Especializado em QA</h4>
-                    <p class="text-xs text-slate-400 font-light">Especialização em técnicas avançadas de teste, simulação de cenários reais e automação.</p>
+                <div class="card-clean p-6 rounded-xl border-l-4 border-l-accent-500">
+                    <span class="text-[10px] font-code uppercase tracking-wider px-2 py-0.5 rounded bg-teal-50 text-accent-500">Formação Técnica</span>
+                    <h4 class="font-bold text-slate-900 text-base mt-2 mb-1">Especialização em Qualidade e Automação de QA</h4>
+                    <p class="text-xs text-slate-600 font-normal">Capacitação em técnicas avançadas de teste, automação e simulação de cenários complexos.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Formação Acadêmica -->
-    <section id="formacao" class="py-16 px-6 relative z-10">
+    <section id="formacao" class="py-12 px-6 relative z-10">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-xs font-code font-bold uppercase tracking-widest text-cyber-cyan mb-2">// EDUCAÇÃO</h2>
-            <h3 class="text-3xl font-bold mb-8 text-white">Formação Acadêmica</h3>
+            <h2 class="text-xs font-code font-bold uppercase tracking-wider text-brand-500 mb-2">// EDUCAÇÃO</h2>
+            <h3 class="text-2xl font-bold mb-8 text-slate-900">Formação Acadêmica</h3>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="glass-card p-6 rounded-2xl">
-                    <span class="text-xs font-code text-cyber-pink">Pós-Graduação (2019 - 2020)</span>
-                    <h4 class="font-bold text-white text-lg mt-1 mb-2">Engenharia de Software com Métodos Ágeis</h4>
-                    <p class="text-xs text-slate-400">Universidade Cidade de São Paulo (UNICID)</p>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="card-clean p-6 rounded-xl">
+                    <span class="text-xs font-code text-brand-500">Pós-Graduação (2019 - 2020)</span>
+                    <h4 class="font-bold text-slate-900 text-base mt-1 mb-1">Engenharia de Software com Métodos Ágeis</h4>
+                    <p class="text-xs text-slate-600">Universidade Cidade de São Paulo (UNICID)</p>
                 </div>
-                <div class="glass-card p-6 rounded-2xl">
-                    <span class="text-xs font-code text-cyber-pink">Graduação Tecnológica (2016 - 2018)</span>
-                    <h4 class="font-bold text-white text-lg mt-1 mb-2">Análise e Desenvolvimento de Sistemas</h4>
-                    <p class="text-xs text-slate-400">UNIBR - Faculdade de São Vicente</p>
+                <div class="card-clean p-6 rounded-xl">
+                    <span class="text-xs font-code text-brand-500">Graduação Tecnológica (2016 - 2018)</span>
+                    <h4 class="font-bold text-slate-900 text-base mt-1 mb-1">Análise e Desenvolvimento de Sistemas</h4>
+                    <p class="text-xs text-slate-600">UNIBR - Faculdade de São Vicente</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer class="py-12 px-6 border-t border-slate-900 relative z-10 text-center text-xs text-slate-500 font-code">
+    <footer class="py-10 px-6 border-t border-slate-200 relative z-10 text-center text-xs text-slate-500 font-code">
         <div class="max-w-4xl mx-auto space-y-3">
             <p>© 2026 Barbara Simao Gomes. Todos os direitos reservados.</p>
-            <div class="flex justify-center gap-6 text-slate-400">
-                <a href="mailto:baah.simao@gmail.com" class="hover:text-cyber-pink transition">baah.simao@gmail.com</a>
-                <a href="https://linkedin.com/in/barbara-simao-485945124" target="_blank" class="hover:text-cyber-pink transition">Perfil LinkedIn</a>
+            <div class="flex justify-center gap-6 text-slate-600">
+                <a href="mailto:baah.simao@gmail.com" class="hover:text-slate-900 transition">baah.simao@gmail.com</a>
+                <a href="https://linkedin.com/in/barbara-simao-485945124" target="_blank" class="hover:text-slate-900 transition">Perfil LinkedIn</a>
             </div>
         </div>
     </footer>
